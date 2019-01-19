@@ -12,13 +12,15 @@ public class WorldGenerator : MonoBehaviour
         Count
     }
 
-    // DEBUG
+    // r = uv.x
+    // g = uv.y
+    // b = size
 	Color[] indexColor = {
 		new Color(0.0f,  0f, 0.245f),
-		new Color(0.25f, 0f, 0.245f),
-		new Color(0.5f,  0f, 0.245f),
-		new Color(0.75f,  0f, 0.245f),
-		new Color(0.0f,  0.25f, 0.245f),
+		new Color(0.252f, 0f, 0.245f),
+		new Color(0.502f,  0f, 0.245f),
+		new Color(0.752f,  0f, 0.245f),
+		new Color(0.0f,  0.252f, 0.245f),
 	};
 
     public bool randomSeed;
@@ -183,33 +185,5 @@ public class WorldGenerator : MonoBehaviour
         _treasurePosition = _holes.FarZonePosition(6);
         TreasureRoom(_treasurePosition, 6);
         GenGeometry();
-    }
-
-    void OnValidate()
-    {
-        GenField();
-    }
-
-    void OnDrawGizmosSelected()
-	{
-        if (_map == null) return;
-        Gizmos.color = Color.white;
-		for(int x = 0; x < fieldSize; ++x)
-		{
-			for(int y = 0; y < fieldSize; ++y)
-			{
-				for(int z = 0; z < fieldSize; ++z)
-				{
-                    if (_map[x, y, z] > 0)
-                    {
-                        ZoneType zoneType = (ZoneType)(_map[x, y, z] % (int)ZoneType.Count);
-                        Gizmos.color = indexColor[(int) zoneType % indexColor.Length];
-                        Gizmos.DrawWireCube(transform.position + new Vector3(x, y, z), Vector3.one);
-                    }
-				}
-			}
-		}
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(_treasurePosition, 1f);
     }
 }
