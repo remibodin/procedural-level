@@ -8,6 +8,13 @@ public class FreeCam : MonoBehaviour
     public float rotationSpeed = 180f;
     Vector3 _motion;
     Vector2 _rotation;
+
+    void Start()
+    {
+        _rotation.x = transform.rotation.eulerAngles.x;
+        _rotation.y = transform.rotation.eulerAngles.y;
+    }
+
 	void Update()
     {
         _motion.x = Input.GetAxis("Horizontal");

@@ -20,8 +20,8 @@
 			float4 color : COLOR;
 		};
 
-		void surf (Input IN, inout SurfaceOutputStandard o) {
-
+		void surf (Input IN, inout SurfaceOutputStandard o) 
+		{
 			float2 uv = IN.uv_MainTex;
 			uv.x = (uv.x * IN.color.b) + IN.color.r;
 			uv.y = (uv.y * IN.color.b) + IN.color.g;
