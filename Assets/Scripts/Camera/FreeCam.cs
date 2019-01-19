@@ -9,10 +9,18 @@ public class FreeCam : MonoBehaviour
     Vector3 _motion;
     Vector2 _rotation;
 
-    void Start()
+    void OnEnable()
     {
         _rotation.x = transform.rotation.eulerAngles.x;
         _rotation.y = transform.rotation.eulerAngles.y;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 	void Update()

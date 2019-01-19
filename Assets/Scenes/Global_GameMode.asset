@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb5752c8c695474585acbdf28d60dfc, type: 3}
-  m_Name: GameModeAsset
+  m_Name: Global_GameMode
   m_EditorClassIdentifier: 
   player: {fileID: 1011912267498170, guid: e42f3c022a915b64eb307cc62f550f08, type: 2}
   spawnPlayerOnSceneLoad: 1
