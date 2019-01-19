@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff84e059ccf46a84990375bc0473a41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomSeed: 1
   seed: 3
   fieldSize: 40
   nbZones: 10

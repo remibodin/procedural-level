@@ -21,6 +21,7 @@ public class WorldGenerator : MonoBehaviour
 		new Color(0.0f,  0.25f, 0.245f),
 	};
 
+    public bool randomSeed;
     public float seed = 0f;
     public int fieldSize = 30;
 
@@ -174,6 +175,10 @@ public class WorldGenerator : MonoBehaviour
 
     void Start()
     {
+        if (randomSeed)
+        {
+            seed = Random.value * 1000f;
+        }
         GenField();
         _treasurePosition = _holes.FarZonePosition(6);
         TreasureRoom(_treasurePosition, 6);
